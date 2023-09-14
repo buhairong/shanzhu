@@ -1,9 +1,9 @@
 import { defineComponent } from 'vue'
 
-export const App = defineComponent({
+export const Forth = defineComponent({
   setup() {
     return () => <>
-      <router-view></router-view>
+      <div>Forth</div>
     </>
   }
 })

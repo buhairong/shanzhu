@@ -1,9 +1,9 @@
 import { defineComponent } from 'vue'
 
-export const App = defineComponent({
+export const Bar = defineComponent({
   setup() {
     return () => <>
-      <router-view></router-view>
+      <div>Bar</div>
     </>
   }
 })

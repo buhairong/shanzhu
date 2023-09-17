@@ -10,7 +10,6 @@ export const Welcome = defineComponent({
         <h1>玄睻记账</h1>
       </header>
       <main><router-view></router-view></main>
-      <footer>footer</footer>
     </div>
   }
 })

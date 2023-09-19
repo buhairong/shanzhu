@@ -1,9 +1,13 @@
 import { RouteRecordRaw } from 'vue-router'
 import { Welcome } from "../views/welcome/Welcome"
 import { First } from "../views/welcome/First"
+import { FirstActions } from "../views/welcome/FirstActions"
 import { Second } from "../views/welcome/Second"
+import { SecondActions } from "../views/welcome/SecondActions"
 import { Third } from "../views/welcome/Third"
+import { ThirdActions } from "../views/welcome/ThirdActions"
 import { Forth } from "../views/welcome/Forth"
+import { ForthActions } from "../views/welcome/ForthActions"
 
 export const routes: RouteRecordRaw[] = [
   {
@@ -22,20 +26,29 @@ export const routes: RouteRecordRaw[] = [
         path: "1",
         components: {
           main: First,
-          footer: FirstAction
+          footer: FirstActions
         },
       },
       {
         path: "2",
-        component: Second,
+        components: {
+          main: Second,
+          footer: SecondActions
+        },
       },
       {
         path: "3",
-        component: Third,
+        components: {
+          main: Third,
+          footer: ThirdActions
+        },
       },
       {
         path: "4",
-        component: Forth,
+        components: {
+          main: Forth,
+          footer: ForthActions
+        },
       },
     ],
   },

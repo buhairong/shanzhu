@@ -1,19 +1,13 @@
-import { defineComponent } from 'vue'
-import style from './first.module.scss'
-import clock from '../../assets/icons/clock.svg'
+import s from './welcome.module.scss';
+import { FunctionalComponent } from 'vue';
 
-export const Second = defineComponent({
-  setup() {
-    return () => <div class={style.wrapper}>
-      <div class={style.card}>
-        <img src={clock} />
-        <h2>每日提醒<br />不遗漏每一笔账单</h2>
-      </div>
-      <div class={style.actions}>
-        <router-link class={style.fake} to="/start">跳过</router-link>
-        <router-link to="/welcome/3">下一页</router-link>
-        <router-link to="/start">跳过</router-link>
-      </div>
-    </div>
-  }
-})
+export const Second: FunctionalComponent = () => {
+  return <div class={s.card}>
+    <svg>
+      <use xlinkHref='#clock'></use>
+    </svg>
+    <h2>每日提醒<br />不遗漏每一笔账单</h2>
+  </div>
+}
+
+Second.displayName = 'Second'

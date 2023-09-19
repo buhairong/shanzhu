@@ -20,7 +20,10 @@ export const routes: RouteRecordRaw[] = [
       },
       {
         path: "1",
-        component: First,
+        components: {
+          main: First,
+          footer: FirstAction
+        },
       },
       {
         path: "2",

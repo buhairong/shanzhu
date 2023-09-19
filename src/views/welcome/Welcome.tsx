@@ -9,7 +9,8 @@ export const Welcome = defineComponent({
         <img src={logo} />
         <h1>玄睻记账</h1>
       </header>
-      <main><router-view></router-view></main>
+      <main><router-view name="main"></router-view></main>
+      <footer><router-view name="footer"></router-view></footer>
     </div>
   }
 })

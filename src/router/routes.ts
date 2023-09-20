@@ -20,34 +20,38 @@ export const routes: RouteRecordRaw[] = [
     children: [
       {
         path: "",
-        redirect: '/welcome/1'
+        redirect: "/welcome/1",
       },
       {
+        name: "Welcome1",
         path: "1",
         components: {
           main: First,
-          footer: FirstActions
+          footer: FirstActions,
         },
       },
       {
+        name: "Welcome2",
         path: "2",
         components: {
           main: Second,
-          footer: SecondActions
+          footer: SecondActions,
         },
       },
       {
+        name: "Welcome3",
         path: "3",
         components: {
           main: Third,
-          footer: ThirdActions
+          footer: ThirdActions,
         },
       },
       {
+        name: "Welcome4",
         path: "4",
         components: {
           main: Forth,
-          footer: ForthActions
+          footer: ForthActions,
         },
       },
     ],

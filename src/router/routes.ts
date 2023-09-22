@@ -8,6 +8,7 @@ import { Third } from "../views/welcome/Third"
 import { ThirdActions } from "../views/welcome/ThirdActions"
 import { Forth } from "../views/welcome/Forth"
 import { ForthActions } from "../views/welcome/ForthActions"
+import { Start } from "../views/start/start"
 
 export const routes: RouteRecordRaw[] = [
   {
@@ -55,5 +56,10 @@ export const routes: RouteRecordRaw[] = [
         },
       },
     ],
+  },
+  {
+    name: "start",
+    path: "/start",
+    component: Start
   },
 ];

@@ -1,19 +1,34 @@
-import { defineComponent } from 'vue'
+import { defineComponent, ref } from 'vue'
 import { Button } from '../../components/Button/Button'
 import { FloatButton } from '../../components/FloatButton/FloatButton'
 import style from './start.module.scss'
 import { Center } from '../../components/Center/Center'
 import { Icon } from '../../components/Icon/Icon'
+import { Navbar } from '../../components/NavBar/NavBar'
+import { Overlay } from '../../components/Overlay/Overlay'
 
 export const Start = defineComponent({
   setup: (props, context) => {
+    const overlayVisibleRef = ref(false)
+
     const onClick = () => {
       console.log('onClick')
     }
 
+    const onClickMenu = () => {
+      overlayVisibleRef.value = !overlayVisibleRef.value
+    }
+
     return () => (
       <div>
-        <nav>nav</nav>
+        <Navbar>
+          {
+            {
+              default: () => '玄睻记账',
+              icon: () => <Icon name="menu" class={style.navIcon} onClick={onClickMenu}></Icon>
+            }
+          }
+        </Navbar>
         <Center class={style.icon_wrapper}>
           <Icon name="pig" class={style.icon}></Icon>
         </Center>
@@ -21,6 +36,7 @@ export const Start = defineComponent({
           <Button class={style.button} onClick={onClick}>开始记账</Button>
         </div>
         <FloatButton iconName="add"></FloatButton>
+        { overlayVisibleRef.value && <Overlay onClose={onClickMenu} /> }
       </div>
     )
   }

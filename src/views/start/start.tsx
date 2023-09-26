@@ -11,10 +11,6 @@ export const Start = defineComponent({
   setup: (props, context) => {
     const overlayVisibleRef = ref(false)
 
-    const onClick = () => {
-      console.log('onClick')
-    }
-
     const onClickMenu = () => {
       overlayVisibleRef.value = !overlayVisibleRef.value
     }
@@ -33,9 +29,13 @@ export const Start = defineComponent({
           <Icon name="pig" class={style.icon}></Icon>
         </Center>
         <div class={style.button_wrapper}>
-          <Button class={style.button} onClick={onClick}>开始记账</Button>
+          <router-link to="/items/create">
+            <Button class={style.button}>开始记账</Button>
+          </router-link>
         </div>
-        <FloatButton iconName="add"></FloatButton>
+        <router-link to="/items/create">
+            <FloatButton iconName="add"></FloatButton>
+        </router-link>
         { overlayVisibleRef.value && <Overlay onClose={onClickMenu} /> }
       </div>
     )

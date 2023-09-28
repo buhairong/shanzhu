@@ -13,6 +13,9 @@ export const MainLayout = defineComponent({
             }
           }
         </Navbar>
+        {
+          context.slots.default?.()
+        }
       </div>
     )
   }
